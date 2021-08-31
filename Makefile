@@ -13,14 +13,14 @@ $(BINDIR)/%.class:$(SRCDIR)/%.java
 		$(JAVAC) -d $(BINDIR)/ src/*.java
 
 
-CLASSES= ReadFile.class MedianFilter.class	sequential.class	Parallel.class
+CLASSES= Score.class	WordDictionary.class	WordPanel.class	WordApp.class	WordRecord.class
 
 CLASS_FILES=$(CLASSES:%.class=$(BINDIR)/%.class)
 
 default: $(CLASS_FILES)
 
-runparallel:
-		java -cp bin Parallel $(file) $(size)
+run: $(CLASS_FILES)
+		java -cp bin WordApp $(total) $(screen) $(dict)
 		
 runsequential:
 		java -cp bin sequential $(file) $(size)
