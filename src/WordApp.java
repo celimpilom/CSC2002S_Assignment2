@@ -62,6 +62,18 @@ public class WordApp {
 	         String text = textEntry.getText();
 	          //[snip]
 			  // check if word is there
+			  for (int i = 0; i < words.length; i++){
+				if (words[i].getWord().equals(text)){
+					score.caughtWord(text.length());
+					scr.setText("Score:" + score.getScore()+ "    ");
+					caught.setText("Caught: " + score.getCaught() + "    ");
+				}
+				else {
+						score.missedWord();
+						missed.setText("Missed:" + score.getMissed()+ "    ");
+					}
+
+				}
 			  // increment caught by 1
 			  // score by wordlength
 	         textEntry.setText("");
@@ -87,7 +99,7 @@ public class WordApp {
 		      textEntry.requestFocus();  //return focus to the text entry field
 		   }
 		});
-		JButton endB = new JButton("End");;
+		JButton endB = new JButton("End");
 			
 				// add the listener to the jbutton to handle the "pressed" event
 		endB.addActionListener(new ActionListener()
@@ -98,6 +110,9 @@ public class WordApp {
 			  // stop the game... (stop the thread/timer)
 			  w.stop();
 			  // reset words
+			  for (int i = 0; i < words.length; i++){
+				words[i].resetWord();
+				}
 			  // repaint
 			  w.repaint();
 		   }
@@ -132,6 +147,7 @@ public class WordApp {
 	        System.err.println("Problem reading file " + filename + " default dictionary will be used");
 	    }
 		return dictStr;
+
 	}
 
 	public static void main(String[] args) {
