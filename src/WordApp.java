@@ -1,4 +1,9 @@
-
+/**
+*helper class to readfiles
+*
+* @author Celimpilo Manqele
+* @version 1.0
+*/
 import javax.swing.*;
 
 import java.awt.*;
@@ -29,7 +34,12 @@ public class WordApp {
 
 	static WordPanel w;
 	
-	
+	static JLabel missed =new JLabel("Missed:" + score.getMissed()+ "    ");
+
+	public static synchronized void updateMissed(){
+		missed.setText("Missed:" + score.getMissed()+ "    ");
+	}
+ 	
 	
 	public static void setupGUI(int frameX,int frameY,int yLimit) {
 		// Frame init and dimensions
@@ -43,18 +53,17 @@ public class WordApp {
 		w = new WordPanel(words,yLimit);
 		w.setSize(frameX,yLimit+100);
 	   g.add(w); 
-	    
+
       JPanel txt = new JPanel();
       txt.setLayout(new BoxLayout(txt, BoxLayout.LINE_AXIS)); 
       JLabel caught =new JLabel("Caught: " + score.getCaught() + "    ");
-      JLabel missed =new JLabel("Missed:" + score.getMissed()+ "    ");
+      
       JLabel scr =new JLabel("Score:" + score.getScore()+ "    ");    
       txt.add(caught);
 	   txt.add(missed);
 	   txt.add(scr);
-    
+		
 	    //[snip]
-  
 	   final JTextField textEntry = new JTextField("",20);
 	   textEntry.addActionListener(new ActionListener()
 	   {
@@ -67,12 +76,8 @@ public class WordApp {
 					score.caughtWord(text.length());
 					scr.setText("Score:" + score.getScore()+ "    ");
 					caught.setText("Caught: " + score.getCaught() + "    ");
+					words[i].resetWord();
 				}
-				else {
-						score.missedWord();
-						missed.setText("Missed:" + score.getMissed()+ "    ");
-					}
-
 				}
 			  // increment caught by 1
 			  // score by wordlength
@@ -117,10 +122,24 @@ public class WordApp {
 			  w.repaint();
 		   }
 		});
-		
+
+		JButton quitB = new JButton("Quit");
+		/*
+		*quit button method
+		* @param 
+		*/
+		quitB.addActionListener(new ActionListener()
+		{
+		   public void actionPerformed(ActionEvent e)
+		   {
+		      
+			  System.exit(0);
+		   }
+		});
+
 		b.add(startB);
 		b.add(endB);
-		
+		b.add(quitB);
 		g.add(b);
     	
       frame.setLocationRelativeTo(null);  // Center window on screen.
