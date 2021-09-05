@@ -1,7 +1,6 @@
 /**
-*helper class to readfiles
+*word app class
 *
-* @author Celimpilo Manqele
 * @version 1.0
 */
 import javax.swing.*;
@@ -35,7 +34,10 @@ public class WordApp {
 	static WordPanel w;
 	
 	static JLabel missed =new JLabel("Missed:" + score.getMissed()+ "    ");
-
+	/**
+     * mehtod to update missed words
+     *
+     */
 	public static synchronized void updateMissed(){
 		missed.setText("Missed:" + score.getMissed()+ "    ");
 	}
