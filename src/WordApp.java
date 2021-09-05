@@ -132,6 +132,7 @@ public class WordApp {
 			  *repaint
 			  */
 			  w.repaint();
+			  JOptionPane.showMessageDialog(null,"<html> GAME OVER <br> Score="+score.getScore()+"</html>");
 		   }
 		});
 
