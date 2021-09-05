@@ -51,6 +51,9 @@ public class WordPanel extends JPanel implements Runnable {
 						words[i].drop(words[i].getSpeed());
 						if (words[i].dropped()){
 							words[i].resetWord();
+							WordApp.score.missedWord();
+							WordApp.updateMissed();
+							repaint();
 						}
 					}
 					repaint();
