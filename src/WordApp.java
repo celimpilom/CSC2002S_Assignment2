@@ -111,23 +111,33 @@ public class WordApp {
 				// add the listener to the jbutton to handle the "pressed" event
 		endB.addActionListener(new ActionListener()
 		{
+		/*
+		*listner added to handle end button
+		*
+		*/
 		   public void actionPerformed(ActionEvent e)
 		   {
-		      //[snip]
-			  // stop the game... (stop the thread/timer)
+			/*
+			*stop the game
+			*
+			*/
 			  w.stop();
-			  // reset words
+			  /*
+			  *reset words
+			  */
 			  for (int i = 0; i < words.length; i++){
 				words[i].resetWord();
 				}
-			  // repaint
+			  /*
+			  *repaint
+			  */
 			  w.repaint();
 		   }
 		});
 
 		JButton quitB = new JButton("Quit");
 		/*
-		*quit button method
+		*quit button implemented
 		* @param 
 		*/
 		quitB.addActionListener(new ActionListener()
