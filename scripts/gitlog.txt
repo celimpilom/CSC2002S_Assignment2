@@ -1,0 +1,47 @@
+commit 76951a5b70e59f372e53f2756f8dad6f40c661aa
+Author: celimpilo <manqelecm7@gmail.com>
+Date:   Sun Sep 5 20:46:30 2021 +0200
+
+    end button updated
+
+commit b31d2fd0ffa321b5a7319863b1db5b148b8ba80d
+Author: celimpilo <manqelecm7@gmail.com>
+Date:   Sun Sep 5 17:39:59 2021 +0200
+
+     GUI updated
+
+commit e63831f38e1db5c9e6d08a124bb4a2226c7f1d39
+Author: celimpilo <manqelecm7@gmail.com>
+Date:   Sun Sep 5 17:25:55 2021 +0200
+
+    quit button implemented
+
+commit 2ffc1a81ad36754c75c41efd002ab252b9e5ad21
+Author: celimpilo <manqelecm7@gmail.com>
+Date:   Sun Sep 5 17:18:30 2021 +0200
+
+     methode to update GUI implemented
+
+commit a46bbf9db5dcf021b3c0ee30d4597df7352ae77a
+Author: celimpilo <manqelecm7@gmail.com>
+Date:   Sun Sep 5 17:17:03 2021 +0200
+
+    code to increament missed words
+
+commit b37b703fe61bc99f720ffeb8ef272ec68e44276b
+Author: celimpilo <manqelecm7@gmail.com>
+Date:   Sat Sep 4 14:47:20 2021 +0200
+
+    code to increament caught added
+
+commit 4f13c07621914159458bfcff01888b59ecb35b1f
+Author: celimpilo <manqelecm7@gmail.com>
+Date:   Tue Aug 31 15:33:35 2021 +0200
+
+    added skeleton code
+
+commit e043892a3365d69ccae7ccd645a756607d6607c8
+Author: celimpilo <manqelecm7@gmail.com>
+Date:   Tue Aug 31 01:27:24 2021 +0200
+
+    Project started and added raw data privacy

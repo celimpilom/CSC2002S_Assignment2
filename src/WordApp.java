@@ -24,6 +24,7 @@ public class WordApp {
    	static int frameX=1000;
 	static int frameY=600;
 	static int yLimit=480;
+	static int sko;
 
 	static WordDictionary dict = new WordDictionary(); //use default dictionary, to read from file eventually
 
@@ -35,7 +36,7 @@ public class WordApp {
 	
 	static JLabel missed =new JLabel("Missed:" + score.getMissed()+ "    ");
 	/**
-     * mehtod to update missed words
+     * method to update missed words
      *
      */
 	public static synchronized void updateMissed(){
@@ -122,17 +123,26 @@ public class WordApp {
 			*
 			*/
 			  w.stop();
+			  sko = score.getScore();
+			  score.resetScore();
 			  /*
 			  *reset words
 			  */
+			  score.resetScore();
+			  scr.setText("Score:" + score.getScore()+ "    ");
+			  missed.setText("Missed:" + score.getMissed()+ "    ");
+			  caught.setText("Caught: " + score.getCaught() + "    ");
 			  for (int i = 0; i < words.length; i++){
 				words[i].resetWord();
 				}
 			  /*
 			  *repaint
 			  */
-			  w.repaint();
-			  JOptionPane.showMessageDialog(null,"<html> GAME OVER <br> Score="+score.getScore()+"</html>");
+			  
+			  JOptionPane.showMessageDialog(null,"<html> GAME OVER <br> Score="+sko+" </html>");
+				
+			  
+				w.repaint();
 		   }
 		});
 
